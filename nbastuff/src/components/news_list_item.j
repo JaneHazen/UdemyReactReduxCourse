@@ -1,1 +1,0 @@
-news_list_item.js
