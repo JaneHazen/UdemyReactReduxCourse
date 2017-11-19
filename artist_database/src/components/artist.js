@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from './header'
+import AlbumList from './albumList'
 
 const request_url = `http://localhost:3004/artists`
 
@@ -29,7 +30,7 @@ class Artist extends Component {
           <Header/>
           <div className="artist_bio">
             <div className="avatar">
-              <span style={{background:`url('/images/covers/${this.state.artist.cover}.jpg') no repeat`}}></span>
+              <span style={{background:`url('/images/covers/${this.state.artist.cover}.jpg') no-repeat`}}></span>
             </div>
             <div className="bio">
               <h3>{this.state.artist.name}</h3>
@@ -37,6 +38,8 @@ class Artist extends Component {
                 {this.state.artist.bio}
               </div>
             </div>
+
+            <AlbumList albumList={this.state.artist.albums}/>
           </div>
         </div>
       )
