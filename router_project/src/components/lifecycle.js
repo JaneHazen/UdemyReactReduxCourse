@@ -15,6 +15,21 @@ class Lifecycle extends Component {
   componentWillMount(){
     console.log('Before component gets created')
   }
+
+
+  componentWillUpdate(){
+    console.log("BEFORE UPDATE")
+  }
+
+  componentDidUpdate(){
+    console.log("AFTER UPDATE")
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextState.title === "NewTitle"){return false}
+    return true
+  }
+
   //render JSX
   render(){
     return(
@@ -22,6 +37,7 @@ class Lifecycle extends Component {
         <h4>{this.state.title}</h4>
         <br/>
         <div>{this.state.body}</div>
+        <div onClick={()=>this.setState({title: "NewTitle"})}> clickme</div>
       </div>
       )
   }
