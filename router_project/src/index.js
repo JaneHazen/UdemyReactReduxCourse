@@ -6,11 +6,13 @@ import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 import Posts from './components/posts'
 import Profile from './components/profile'
 import PostsItem from './components/posts_item'
+import Lifecycle from './components/lifecycle'
 import NotFound from './components/404'
 
 class App extends Component {
   render(){
-    return <div>home</div>
+    return <div>home <Lifecycle/> </div>
+
   }
 }
 
@@ -27,6 +29,7 @@ ReactDOM.render(
           <Route path="/posts/:id" component={PostsItem}></Route>
           <Route path="/profile" component={ Profile }></Route>
           <Route path ='/posts' component={ Posts }></Route>
+          <Route path='/lifecycle' component = { Lifecycle}></Route>
           <Route exact path="/" component={ App}></Route>
           <Route path="*" component= {NotFound}></Route>
         </Switch>
