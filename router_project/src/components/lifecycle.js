@@ -11,6 +11,10 @@ class Lifecycle extends Component {
     }
   }
 
+  componentWillRecieveProps(){
+    console.log("this is after you click a link; when props are sent somewhere")
+  }
+
   // before it gets created
   componentWillMount(){
     console.log('Before component gets created')
@@ -46,6 +50,10 @@ class Lifecycle extends Component {
 
   componentDidMount(){
     console.log('After a component is mounted')
+  }
+
+  componentWillUnmount(){
+    console.log('goodbye!')
   }
 
 }
