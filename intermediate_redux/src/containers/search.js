@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { getCars } from '../actions'
+import { bindActionCreators } from 'redux';
 
 class Search extends Component {
   constructor(props){
@@ -12,7 +15,7 @@ class Search extends Component {
 
 searchCars = (event) => {
   event.preventDefault();
-  console.log(this.state)
+  this.props.getCars(this.state.keyword)
 }
 
 
@@ -37,4 +40,8 @@ componentDidMount(){
   }
 }
 
-export default Search;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({getCars},dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Search);
