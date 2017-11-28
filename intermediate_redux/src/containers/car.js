@@ -6,7 +6,9 @@ import { bindActionCreators } from 'redux';
 class Car extends Component {
   render(){
       return(
-          <div>Car</div>
+          <div>
+            {this.props.match.params.id}
+          </div>
         )
     }
 }
