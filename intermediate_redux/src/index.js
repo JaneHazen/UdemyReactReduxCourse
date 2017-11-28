@@ -11,7 +11,7 @@ import reducers from './reducers'
 
 
 import App from './components/app';
-import Car from './components/car';
+import Car from './containers/car';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
 
