@@ -17,4 +17,9 @@ function mapStateToProps(state){
   }
 }
 
-export default Car;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({carDetail}, dispatch)
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Car);
