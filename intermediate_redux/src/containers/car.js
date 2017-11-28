@@ -4,6 +4,11 @@ import { carDetail } from '../actions';
 import { bindActionCreators } from 'redux';
 
 class Car extends Component {
+
+  componentWillMount(){
+    this.props.carDetail(this.props.match.params.id)
+  }
+
   render(){
       return(
           <div>
